@@ -1,0 +1,134 @@
+# 📦 Asset Management Application
+
+**UAP Pemrograman Lanjut 2025**
+
+---
+
+## 📌 Deskripsi Program
+
+Asset Management Application adalah aplikasi berbasis **Java Swing** yang digunakan untuk mengelola data aset. Aplikasi ini dikembangkan untuk memenuhi kebutuhan **Ujian Akhir Praktikum (UAP) Pemrograman Lanjut**, dengan menerapkan konsep GUI, CRUD, File Handling, dan Exception Handling sesuai dengan materi Modul 1–6.
+
+Aplikasi ini memungkinkan pengguna untuk:
+
+* Menambahkan data aset
+* Menampilkan daftar aset dalam bentuk tabel
+* Menghapus data aset
+* Melihat laporan total nilai aset
+* Menyimpan data secara permanen menggunakan file CSV
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+* **Bahasa Pemrograman**: Java
+* **GUI**: Java Swing
+* **Penyimpanan Data**: File CSV
+* **IDE**: IntelliJ IDEA / NetBeans / Visual Studio Code
+* **Version Control**: Git & GitHub
+
+---
+
+## 📂 Struktur Project
+
+```
+AssetManagementApp/
+├── src/
+│   ├── app/
+│   │   └── Main.java
+│   ├── model/
+│   │   └── Asset.java
+│   ├── service/
+│   │   └── AssetService.java
+│   ├── ui/
+│   │   ├── MainFrame.java
+│   │   ├── AssetFormPanel.java
+│   │   ├── AssetTablePanel.java
+│   │   └── ReportPanel.java
+│   └── util/
+│       ├── CSVUtil.java
+│       └── SimpleDocumentListener.java
+├── data/
+│   └── assets.csv
+└── README.md
+```
+
+---
+
+## 🖥️ Fitur Aplikasi
+
+### 1️⃣ List Data Aset
+
+* Menampilkan data aset dalam bentuk tabel
+* Data diambil dari file CSV
+
+### 2️⃣ Input Data Aset
+
+* Menambahkan data aset baru melalui form
+* Validasi input menggunakan Exception Handling
+
+### 3️⃣ Hapus Data Aset
+
+* Menghapus data aset berdasarkan baris tabel yang dipilih
+
+### 4️⃣ Laporan
+
+* Menampilkan total nilai aset yang tersimpan
+
+---
+
+## 🔄 CRUD Implementation
+
+| Operasi | Keterangan              |
+| ------- | ----------------------- |
+| Create  | Menambah data aset      |
+| Read    | Menampilkan data aset   |
+| Delete  | Menghapus data aset     |
+| Update  | Tidak diimplementasikan |
+
+---
+
+## 💾 File Handling
+
+* Data disimpan dalam file `assets.csv`
+* Data tetap tersimpan meskipun aplikasi ditutup dan dijalankan kembali
+* File akan dibuat otomatis jika belum tersedia
+
+---
+
+## ⚠️ Exception Handling
+
+* Validasi input angka pada form input
+* Penanganan error saat membaca dan menulis file
+* Mencegah aplikasi crash akibat input tidak valid
+
+---
+
+## ▶️ Cara Menjalankan Program
+
+1. Pastikan **Java Development Kit (JDK)** sudah terinstall
+2. Clone repository GitHub:
+
+   ```bash
+   git clone https://github.com/username/AssetManagementApp.git
+   ```
+3. Buka project menggunakan IDE
+4. Jalankan file:
+
+   ```
+   src/app/Main.java
+   ```
+
+---
+
+## 👥 Anggota Kelompok
+
+* Nama Mahasiswa 1
+* Nama Mahasiswa 2
+
+---
+
+## 📚 Catatan Tambahan
+
+* Aplikasi ini dibuat sebagai bagian dari **UAP Pemrograman Lanjut 2025**
+* Code review dan testing dilakukan secara manual
+* Aplikasi dapat dikembangkan lebih lanjut dengan fitur edit dan pencarian data
