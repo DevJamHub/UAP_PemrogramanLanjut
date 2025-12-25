@@ -1,37 +1,36 @@
-# UAP_PemrogramanLanjut
-📦 Asset Management Application
+# 📦 Asset Management Application
 
-UAP Pemrograman Lanjut 2025
+**UAP Pemrograman Lanjut 2025**
 
-📌 Deskripsi Program
+---
 
-Asset Management Application adalah aplikasi berbasis Java Swing yang digunakan untuk mengelola data aset. Aplikasi ini dikembangkan untuk memenuhi kebutuhan Ujian Akhir Praktikum (UAP) Pemrograman Lanjut, dengan menerapkan konsep GUI, CRUD, File Handling, dan Exception Handling sesuai dengan materi Modul 1–6.
+## 📌 Deskripsi Program
+
+Asset Management Application adalah aplikasi berbasis **Java Swing** yang digunakan untuk mengelola data aset. Aplikasi ini dikembangkan untuk memenuhi kebutuhan **Ujian Akhir Praktikum (UAP) Pemrograman Lanjut**, dengan menerapkan konsep GUI, CRUD, File Handling, dan Exception Handling sesuai dengan materi Modul 1–6.
 
 Aplikasi ini memungkinkan pengguna untuk:
 
-Menambahkan data aset
+* Menambahkan data aset
+* Menampilkan daftar aset dalam bentuk tabel
+* Menghapus data aset
+* Melihat laporan total nilai aset
+* Menyimpan data secara permanen menggunakan file CSV
 
-Menampilkan daftar aset dalam bentuk tabel
+---
 
-Menghapus data aset
+## 🛠️ Teknologi yang Digunakan
 
-Melihat laporan total nilai aset
+* **Bahasa Pemrograman**: Java
+* **GUI**: Java Swing
+* **Penyimpanan Data**: File CSV
+* **IDE**: IntelliJ IDEA / NetBeans / Visual Studio Code
+* **Version Control**: Git & GitHub
 
-Menyimpan data secara permanen menggunakan file CSV
+---
 
-🛠️ Teknologi yang Digunakan
+## 📂 Struktur Project
 
-Bahasa Pemrograman: Java
-
-GUI: Java Swing
-
-Penyimpanan Data: File CSV
-
-IDE: IntelliJ IDEA / NetBeans / VS Code
-
-Version Control: Git & GitHub
-
-📂 Struktur Project
+```
 AssetManagementApp/
 ├── src/
 │   ├── app/
@@ -51,75 +50,85 @@ AssetManagementApp/
 ├── data/
 │   └── assets.csv
 └── README.md
+```
 
-🖥️ Fitur Aplikasi
-1️⃣ List Data Aset
+---
 
-Menampilkan data aset dalam bentuk tabel
+## 🖥️ Fitur Aplikasi
 
-Data diambil dari file CSV
+### 1️⃣ List Data Aset
 
-2️⃣ Input Data Aset
+* Menampilkan data aset dalam bentuk tabel
+* Data diambil dari file CSV
 
-Menambahkan data aset baru
+### 2️⃣ Input Data Aset
 
-Validasi input menggunakan Exception Handling
+* Menambahkan data aset baru melalui form
+* Validasi input menggunakan Exception Handling
 
-3️⃣ Hapus Data Aset
+### 3️⃣ Hapus Data Aset
 
-Menghapus data aset berdasarkan baris tabel yang dipilih
+* Menghapus data aset berdasarkan baris tabel yang dipilih
 
-4️⃣ Laporan
+### 4️⃣ Laporan
 
-Menampilkan total nilai aset
+* Menampilkan total nilai aset yang tersimpan
 
-🔄 CRUD Implementation
-Operasi	Keterangan
-Create	Menambah data aset
-Read	Menampilkan data aset
-Delete	Menghapus data aset
-Update	Tidak diimplementasikan
-💾 File Handling
+---
 
-Data disimpan dalam file assets.csv
+## 🔄 CRUD Implementation
 
-Data tetap tersimpan meskipun aplikasi ditutup
+| Operasi | Keterangan              |
+| ------- | ----------------------- |
+| Create  | Menambah data aset      |
+| Read    | Menampilkan data aset   |
+| Delete  | Menghapus data aset     |
+| Update  | Tidak diimplementasikan |
 
-File akan dibuat otomatis jika belum tersedia
+---
 
-⚠️ Exception Handling
+## 💾 File Handling
 
-Validasi input angka pada form
+* Data disimpan dalam file `assets.csv`
+* Data tetap tersimpan meskipun aplikasi ditutup dan dijalankan kembali
+* File akan dibuat otomatis jika belum tersedia
 
-Penanganan error saat membaca/menulis file
+---
 
-Mencegah aplikasi crash akibat input tidak valid
+## ⚠️ Exception Handling
 
-▶️ Cara Menjalankan Program
+* Validasi input angka pada form input
+* Penanganan error saat membaca dan menulis file
+* Mencegah aplikasi crash akibat input tidak valid
 
-Pastikan Java Development Kit (JDK) sudah terinstall
+---
 
-Clone repository:
+## ▶️ Cara Menjalankan Program
 
-git clone https://github.com/username/AssetManagementApp.git
+1. Pastikan **Java Development Kit (JDK)** sudah terinstall
+2. Clone repository GitHub:
 
+   ```bash
+   git clone https://github.com/username/AssetManagementApp.git
+   ```
+3. Buka project menggunakan IDE
+4. Jalankan file:
 
-Buka project menggunakan IDE
+   ```
+   src/app/Main.java
+   ```
 
-Jalankan file:
+---
 
-src/app/Main.java
+## 👥 Anggota Kelompok
 
-👥 Anggota Kelompok
+* Nama Mahasiswa 1
+* Nama Mahasiswa 2
 
-Nama Mahasiswa 1
+---
 
-Nama Mahasiswa 2
+## 📚 Catatan Tambahan
 
-📚 Catatan Tambahan
-
-Aplikasi ini dibuat sebagai bagian dari UAP Pemrograman Lanjut
-
-Code review dan testing dilakukan secara manual
-
-Pengembangan selanjutnya dapat mencakup fitur edit data dan pencarian
+* Aplikasi ini dibuat sebagai bagian dari **UAP Pemrograman Lanjut 2025**
+* Code review dan testing dilakukan secara manual
+* Aplikasi dapat dikembangkan lebih lanjut dengan fitur edit dan pencarian data
