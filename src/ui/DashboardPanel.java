@@ -16,7 +16,7 @@ public class DashboardPanel extends JPanel {
         bg.setLayout(new BorderLayout(0, 30));
         bg.setBorder(new EmptyBorder(30, 40, 30, 40));
 
-        // ===== TITLE =====
+        // ===== TITLE ====
         JLabel title = new JLabel("Dashboard Manajemen Aset", SwingConstants.CENTER);
         title.setFont(new Font("SansSerif", Font.BOLD, 30));
         title.setForeground(Color.WHITE);
