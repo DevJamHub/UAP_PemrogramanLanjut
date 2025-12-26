@@ -1,134 +1,209 @@
-# 📦 Asset Management Application
+# Asset Management App (Java Swing)
 
-**UAP Pemrograman Lanjut 2025**
+## Deskripsi Aplikasi
 
----
+Asset Management App adalah aplikasi desktop berbasis **Java Swing** yang digunakan untuk mengelola data aset. Aplikasi ini dibuat untuk memenuhi ketentuan tugas yang mengimplementasikan materi **Modul 1–6**, meliputi GUI, OOP, CRUD, File Handling, dan Version Control.
 
-## 📌 Deskripsi Program
-
-Asset Management Application adalah aplikasi berbasis **Java Swing** yang digunakan untuk mengelola data aset. Aplikasi ini dikembangkan untuk memenuhi kebutuhan **Ujian Akhir Praktikum (UAP) Pemrograman Lanjut**, dengan menerapkan konsep GUI, CRUD, File Handling, dan Exception Handling sesuai dengan materi Modul 1–6.
-
-Aplikasi ini memungkinkan pengguna untuk:
-
-* Menambahkan data aset
-* Menampilkan daftar aset dalam bentuk tabel
-* Menghapus data aset
-* Melihat laporan total nilai aset
-* Menyimpan data secara permanen menggunakan file CSV
+Data aset disimpan secara permanen menggunakan **file CSV**, sehingga data tidak hilang ketika aplikasi ditutup dan dijalankan kembali.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Fitur Utama
 
-* **Bahasa Pemrograman**: Java
-* **GUI**: Java Swing
-* **Penyimpanan Data**: File CSV
-* **IDE**: IntelliJ IDEA / NetBeans / Visual Studio Code
-* **Version Control**: Git & GitHub
+### 1. Dashboard
+
+* Halaman utama aplikasi
+* Menyediakan menu navigasi:
+
+  * Tambah Aset
+  * Data Aset
+  * Laporan
+* Desain GUI dibuat user-friendly dengan pengaturan warna, font, dan layout.
+
+### 2. Data Aset (List Data)
+
+* Menampilkan data aset dalam bentuk **JTable**
+* Fitur:
+
+  * Searching data
+  * Sorting data
+  * Edit data aset
+  * Hapus data aset
+* Data diambil langsung dari file CSV
+
+### 3. Form Aset (Input Data)
+
+* Digunakan untuk:
+
+  * Menambah data aset
+  * Mengedit data aset
+* Dilengkapi validasi input sebelum data disimpan
+
+### 4. Laporan Aset
+
+* Menampilkan ringkasan data:
+
+  * Total aset
+  * Jumlah kategori
+  * Aset terbaru
+* Data diperbarui secara otomatis
 
 ---
 
-## 📂 Struktur Project
+## Struktur Folder
 
 ```
-AssetManagementApp/
-├── src/
-│   ├── app/
-│   │   └── Main.java
-│   ├── model/
-│   │   └── Asset.java
-│   ├── service/
-│   │   └── AssetService.java
-│   ├── ui/
-│   │   ├── MainFrame.java
-│   │   ├── AssetFormPanel.java
-│   │   ├── AssetTablePanel.java
-│   │   └── ReportPanel.java
-│   └── util/
-│       ├── CSVUtil.java
-│       └── SimpleDocumentListener.java
-├── data/
-│   └── assets.csv
-└── README.md
+src/
+├── app/
+│   └── Main.java
+├── model/
+│   └── Asset.java
+├── service/
+│   └── AssetService.java
+├── util/
+│   ├── CSVUtil.java
+│   └── SimpleDocumentListener.java
+└── ui/
+    ├── MainFrame.java
+    ├── DashboardPanel.java
+    ├── AssetTablePanel.java
+    ├── AssetFormPanel.java
+    └── ReportPanel.java
 ```
 
 ---
 
-## 🖥️ Fitur Aplikasi
+## Penjelasan Teknis
 
-### 1️⃣ List Data Aset
+### GUI (Java Swing)
 
-* Menampilkan data aset dalam bentuk tabel
-* Data diambil dari file CSV
+* Menggunakan komponen Swing:
 
-### 2️⃣ Input Data Aset
+  * JFrame, JPanel, JLabel, JButton, JTable
+* Layout yang digunakan:
 
-* Menambahkan data aset baru melalui form
-* Validasi input menggunakan Exception Handling
+  * BorderLayout
+  * BoxLayout
+* Tampilan dibuat konsisten dan mudah digunakan
 
-### 3️⃣ Hapus Data Aset
+### CRUD & File Handling
 
-* Menghapus data aset berdasarkan baris tabel yang dipilih
+* **Create**: Menambah data aset
+* **Read**: Menampilkan data dari file CSV
+* **Update**: Mengedit data aset berdasarkan ID
+* **Delete**: Menghapus data aset
 
-### 4️⃣ Laporan
+File penyimpanan:
 
-* Menampilkan total nilai aset yang tersimpan
+```
+data/assets.csv
+```
 
----
+API Java yang digunakan:
 
-## 🔄 CRUD Implementation
+* ArrayList
+* LocalDate
+* Comparator
+* BufferedReader & PrintWriter
 
-| Operasi | Keterangan              |
-| ------- | ----------------------- |
-| Create  | Menambah data aset      |
-| Read    | Menampilkan data aset   |
-| Delete  | Menghapus data aset     |
-| Update  | Tidak diimplementasikan |
+### Exception Handling
 
----
+* Menggunakan try-catch untuk menangani:
 
-## 💾 File Handling
-
-* Data disimpan dalam file `assets.csv`
-* Data tetap tersimpan meskipun aplikasi ditutup dan dijalankan kembali
-* File akan dibuat otomatis jika belum tersedia
-
----
-
-## ⚠️ Exception Handling
-
-* Validasi input angka pada form input
-* Penanganan error saat membaca dan menulis file
-* Mencegah aplikasi crash akibat input tidak valid
+  * Error baca/tulis file
+  * Validasi input
+  * File tidak ditemukan
 
 ---
 
-## ▶️ Cara Menjalankan Program
+## Cara Menjalankan Program
 
-1. Pastikan **Java Development Kit (JDK)** sudah terinstall
-2. Clone repository GitHub:
+### Persyaratan
 
-   ```bash
-   git clone https://github.com/username/AssetManagementApp.git
-   ```
-3. Buka project menggunakan IDE
-4. Jalankan file:
+* JDK minimal **Java 17**
+* IDE (IntelliJ IDEA / NetBeans / VS Code)
 
-   ```
-   src/app/Main.java
-   ```
+### Langkah Menjalankan
 
----
+1. Buka project di IDE
+2. Pastikan struktur folder sesuai
+3. Jalankan file:
 
-## 👥 Anggota Kelompok
+```
+src/app/Main.java
+```
 
-* Nama Mahasiswa 1
-* Nama Mahasiswa 2
+4. Aplikasi akan tampil dalam bentuk GUI
 
 ---
 
-## 📚 Catatan Tambahan
+## Version Control (Git)
 
-* Aplikasi ini dibuat sebagai bagian dari **UAP Pemrograman Lanjut 2025**
-* Code review dan testing dilakukan secara manual
-* Aplikasi dapat dikembangkan lebih lanjut dengan fitur edit dan pencarian data
+### Workflow
+
+* Push dilakukan secara berkala
+* Menggunakan branching untuk setiap fitur
+
+Contoh branch:
+
+```
+main
+feature-crud
+feature-ui
+feature-report
+```
+
+Contoh perintah Git:
+
+```bash
+git checkout -b feature-crud
+git add .
+git commit -m "Menambahkan fitur CRUD aset"
+git push origin feature-crud
+
+git checkout main
+git merge feature-crud
+```
+
+---
+
+## Testing (Manual Testing)
+
+Contoh skenario pengujian:
+
+1. Input data aset melalui form
+2. Klik simpan
+3. Periksa data muncul di tabel
+4. Periksa data tersimpan di file CSV
+5. Tutup aplikasi
+6. Jalankan kembali aplikasi dan pastikan data masih ada
+
+---
+
+## Code Review
+
+### Temuan
+
+* Duplikasi kode utilitas file → dipusatkan di CSVUtil
+* Penamaan variabel diperjelas
+* Pemisahan logika UI dan data menggunakan Service
+
+### Perbaikan
+
+* Refactor kode duplikat
+* Struktur package disesuaikan dengan tanggung jawab kelas
+
+---
+
+## Kesimpulan
+
+Aplikasi ini telah memenuhi ketentuan:
+
+* GUI Java Swing
+* Minimal 4 halaman
+* CRUD & File Handling
+* Exception Handling
+* Version Control (Git)
+* Testing dan Code Review
+
+
