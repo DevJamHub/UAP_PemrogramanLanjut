@@ -2,6 +2,7 @@ package util;
 
 import model.Asset;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -11,10 +12,17 @@ public class CSVUtil {
     private static final String PATH = DIR + "/assets.csv";
 
     static {
-        new File(DIR).mkdirs();
+        File dir = new File(DIR);
+        if (!dir.exists()) dir.mkdirs();
+
+        File file = new File(PATH);
         try {
-            new File(PATH).createNewFile();
-        } catch (IOException ignored) {}
+            if (!file.exists()) file.createNewFile();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null,
+                    "Gagal membuat file data: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public static List<Asset> read() {
@@ -24,7 +32,11 @@ public class CSVUtil {
             while ((line = br.readLine()) != null) {
                 if (!line.isBlank()) list.add(Asset.fromCSV(line));
             }
-        } catch (IOException ignored) {}
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null,
+                    "Gagal membaca data: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
         return list;
     }
 
@@ -32,7 +44,9 @@ public class CSVUtil {
         try (PrintWriter pw = new PrintWriter(new FileWriter(PATH))) {
             for (Asset a : assets) pw.println(a.toCSV());
         } catch (IOException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,
+                    "Gagal menyimpan data: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

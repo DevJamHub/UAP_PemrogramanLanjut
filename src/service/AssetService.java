@@ -4,7 +4,7 @@ import model.Asset;
 import util.CSVUtil;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class AssetService {
@@ -16,7 +16,9 @@ public class AssetService {
     }
 
     public List<Asset> getAll() {
-        return assets;
+        return assets.stream()
+                .sorted(Comparator.comparing(Asset::getDate).reversed())
+                .collect(Collectors.toList());
     }
 
     public void add(String id, String name, String category, String note) {
@@ -57,6 +59,7 @@ public class AssetService {
                                 a.getName().toLowerCase().contains(k) ||
                                 a.getCategory().toLowerCase().contains(k)
                 )
+                .sorted(Comparator.comparing(Asset::getDate).reversed())
                 .collect(Collectors.toList());
     }
 }

@@ -4,7 +4,6 @@ import ui.MainFrame;
 
 import javax.swing.*;
 
-//fungsi eksekusi program, set visible(true) paling penting
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
